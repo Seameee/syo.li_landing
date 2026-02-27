@@ -75,6 +75,63 @@ body {
     background-color: var(--bg-secondary);
 }
 
+/* 对话框样式 */
+.quote-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.quote-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.quote-bubble {
+    display: inline-block;
+    max-width: 400px;
+    padding: 0.5em 0.8em;
+    border-radius: 0.8em;
+    border: 2px solid #AAA;
+    background: #FFFFFF;
+    color: #555;
+    text-align: left;
+    font-weight: bold;
+    position: relative;
+}
+
+.quote-name {
+    display: inline-block;
+    padding: 0.2em 0.8em;
+    border-radius: 0.8em;
+    background: #FF3B72;
+    color: #FFF;
+    font-size: 90%;
+    position: absolute;
+    top: -0.8em;
+    left: 0.5em;
+}
+
+.quote-content {
+    font-size: 140%;
+    padding: 0.5em 0.3em 0.2em;
+    color: #555;
+}
+
+.quote-content .quote-song {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.quote-content .quote-song:hover {
+    text-decoration: underline;
+}
+
 /* 名台词容器 */
 .quote-container {
     padding: var(--spacing-md) var(--spacing-lg);

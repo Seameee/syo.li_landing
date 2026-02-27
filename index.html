@@ -15,23 +15,7 @@
             <img src="https://storage.moegirl.org.cn/moegirl/commons/c/c2/BanG_Dream%21_It%27s_MyGO%21%21%21%21%21_10163704.jpg" alt="Soyorin" class="soyorin-image">
         </div>
         
-        <!-- 名台词区域1 - 对话框样式 -->
-        <div class="quote-box">
-            <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
-                 alt="Soyorin" 
-                 class="quote-avatar">
-            <div class="quote-bubble">
-                <span class="quote-name">爽世</span>
-                <div class="quote-content">
-                    为什么要演奏《<a href="https://mzh.moegirl.org.cn/%E6%98%A5%E6%97%A5%E5%BD%B1" 
-                       target="_blank" 
-                       rel="noopener noreferrer"
-                       class="quote-song">春日影</a>》？！！
-                </div>
-            </div>
-        </div>
-        
-        <!-- 名台词区域2 - 简约样式 -->
+        <!-- 名台词区域 - 简约样式 -->
         <div class="quote-container">
             <a href="https://mzh.moegirl.org.cn/%E9%95%BF%E5%B4%8E%E7%88%BD%E4%B8%96" 
                target="_blank" 
@@ -44,6 +28,31 @@
             </a>
         </div>
         
+        <!-- 惊喜气泡按钮 -->
+        <div class="surprise-container">
+            <button class="surprise-btn" id="surpriseBtn" aria-label="点击查看更多">
+                <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
+                     alt="Soyorin" 
+                     class="surprise-avatar">
+            </button>
+            
+            <!-- 展开的对话框 -->
+            <div class="quote-box" id="quoteBox">
+                <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
+                     alt="Soyorin" 
+                     class="quote-avatar">
+                <div class="quote-bubble">
+                    <span class="quote-name">爽世</span>
+                    <div class="quote-content">
+                        为什么要演奏《<a href="https://mzh.moegirl.org.cn/%E6%98%A5%E6%97%A5%E5%BD%B1" 
+                           target="_blank" 
+                           rel="noopener noreferrer"
+                           class="quote-song">春日影</a>》？！！
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <!-- 联系方式区域 -->
         <footer class="footer">
             <a href="https://t.me/Ayanottbot" 
@@ -53,6 +62,44 @@
                 Telegram: @Ayanottbot
             </a>
         </footer>
+        
+        <!-- Moe Counter 计数器 -->
+        <div class="counter">
+            <img src="https://count.getloli.com/@syo.li.count?name=syo.li.count&theme=booru-lewd&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto" 
+                 alt="Moe Counter" 
+                 class="counter-img">
+        </div>
     </main>
+    
+    <script>
+        var btn = document.getElementById('surpriseBtn');
+        var quoteBox = document.getElementById('quoteBox');
+        var isVisible = false;
+        
+        btn.addEventListener('click', function() {
+            if (!isVisible) {
+                // 隐藏按钮，显示对话框
+                btn.classList.add('hidden');
+                quoteBox.style.display = 'flex';
+                quoteBox.offsetHeight; // 触发重绘
+                quoteBox.classList.add('visible');
+                isVisible = true;
+            }
+        });
+        
+        // 点击对话框收起
+        quoteBox.addEventListener('click', function() {
+            if (isVisible) {
+                quoteBox.classList.remove('visible');
+                
+                // 等待动画完成后隐藏对话框，显示按钮
+                setTimeout(function() {
+                    quoteBox.style.display = 'none';
+                    btn.classList.remove('hidden');
+                    isVisible = false;
+                }, 300);
+            }
+        });
+    </script>
 </body>
 </html>

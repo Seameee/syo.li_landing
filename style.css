@@ -75,13 +75,66 @@ body {
     background-color: var(--bg-secondary);
 }
 
+/* 惊喜气泡容器 */
+.surprise-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-top: -1rem;
+    min-height: 80px;
+}
+
+/* 气泡按钮 */
+.surprise-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid var(--accent-primary);
+    background: #FFFFFF;
+    cursor: pointer;
+    padding: 0;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.surprise-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 16px rgba(255, 221, 136, 0.4);
+}
+
+.surprise-btn:active {
+    transform: scale(0.95);
+}
+
+.surprise-btn.hidden {
+    display: none;
+}
+
+.surprise-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 /* 对话框样式 */
 .quote-box {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     margin: 0;
+    opacity: 0;
+    transform: scale(0.8) translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.quote-box.visible {
+    display: flex;
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    cursor: pointer;
 }
 
 .quote-avatar {
@@ -180,6 +233,17 @@ body {
 
 .contact-link:hover {
     color: var(--accent-primary);
+}
+
+/* 计数器 */
+.counter {
+    padding: var(--spacing-sm);
+    margin-top: auto;
+}
+
+.counter-img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* 响应式设计 */

@@ -75,28 +75,33 @@ body {
     background-color: var(--bg-secondary);
 }
 
-/* 惊喜气泡容器 */
-.surprise-container {
+/* 名台词包装器 - 横向布局 */
+.quote-wrapper {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 1rem;
-    margin-top: -1rem;
-    min-height: 80px;
+    justify-content: center;
+    gap: 0.8rem;
+    padding: var(--spacing-md) var(--spacing-lg);
+    max-width: 800px;
+    min-height: 100px;
+    position: relative;
 }
 
 /* 气泡按钮 */
 .surprise-btn {
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
     border: 2px solid var(--accent-primary);
     background: #FFFFFF;
     cursor: pointer;
     padding: 0;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+    position: absolute;
+    left: 0;
 }
 
 .surprise-btn:hover {
@@ -108,9 +113,6 @@ body {
     transform: scale(0.95);
 }
 
-.surprise-btn.hidden {
-    display: none;
-}
 
 .surprise-avatar {
     width: 100%;
@@ -120,21 +122,26 @@ body {
 
 /* 对话框样式 */
 .quote-box {
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
     margin: 0;
     opacity: 0;
-    transform: scale(0.8) translateY(-10px);
+    transform: scale(0.8);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+    white-space: nowrap;
 }
 
 .quote-box.visible {
-    display: flex;
     opacity: 1;
-    transform: scale(1) translateY(0);
+    transform: translateX(-50%) scale(1);
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .quote-avatar {
@@ -143,6 +150,10 @@ body {
     border-radius: 50%;
     object-fit: cover;
     flex-shrink: 0;
+}
+
+.quote-avatar.hidden-avatar {
+    display: none;
 }
 
 .quote-bubble {
@@ -189,6 +200,7 @@ body {
 .quote-container {
     padding: var(--spacing-md) var(--spacing-lg);
     max-width: 600px;
+    transition: opacity 0.2s ease;
 }
 
 .quote-link {

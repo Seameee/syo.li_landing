@@ -15,32 +15,31 @@
             <img src="https://storage.moegirl.org.cn/moegirl/commons/c/c2/BanG_Dream%21_It%27s_MyGO%21%21%21%21%21_10163704.jpg" alt="Soyorin" class="soyorin-image">
         </div>
         
-        <!-- 名台词区域 - 简约样式 -->
-        <div class="quote-container">
-            <a href="https://mzh.moegirl.org.cn/%E9%95%BF%E5%B4%8E%E7%88%BD%E4%B8%96" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="quote-link"
-               title="点击访问萌娘百科 - 长崎素世">
-                <span class="quote-mark">「</span>
-                <span class="quote-text">既然这样，就由我来结束掉！</span>
-                <span class="quote-mark">」</span>
-            </a>
-        </div>
-        
-        <!-- 惊喜气泡按钮 -->
-        <div class="surprise-container">
+        <!-- 名台词区域 + 惊喜气泡 -->
+        <div class="quote-wrapper">
             <button class="surprise-btn" id="surpriseBtn" aria-label="点击查看更多">
                 <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
                      alt="Soyorin" 
                      class="surprise-avatar">
             </button>
             
+            <div class="quote-container" id="quoteContainer">
+                <a href="https://mzh.moegirl.org.cn/%E9%95%BF%E5%B4%8E%E7%88%BD%E4%B8%96" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="quote-link"
+                   title="点击访问萌娘百科 - 长崎素世">
+                    <span class="quote-mark">「</span>
+                    <span class="quote-text">既然这样，就由我来结束掉！</span>
+                    <span class="quote-mark">」</span>
+                </a>
+            </div>
+            
             <!-- 展开的对话框 -->
             <div class="quote-box" id="quoteBox">
                 <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
                      alt="Soyorin" 
-                     class="quote-avatar">
+                     class="quote-avatar hidden-avatar">
                 <div class="quote-bubble">
                     <span class="quote-name">爽世</span>
                     <div class="quote-content">
@@ -74,30 +73,32 @@
     <script>
         var btn = document.getElementById('surpriseBtn');
         var quoteBox = document.getElementById('quoteBox');
+        var quoteContainer = document.getElementById('quoteContainer');
         var isVisible = false;
         
         btn.addEventListener('click', function() {
             if (!isVisible) {
-                // 隐藏按钮，显示对话框
-                btn.classList.add('hidden');
-                quoteBox.style.display = 'flex';
-                quoteBox.offsetHeight; // 触发重绘
+                // 显示对话框
+                quoteContainer.style.opacity = '0';
                 quoteBox.classList.add('visible');
                 isVisible = true;
+            } else {
+                // 隐藏对话框
+                quoteBox.classList.remove('visible');
+                quoteContainer.style.opacity = '1';
+                isVisible = false;
             }
         });
         
-        // 点击对话框收起
-        quoteBox.addEventListener('click', function() {
+        // 点击对话框也可以收起
+        quoteBox.addEventListener('click', function(e) {
+            // 阻止点击链接时的收起行为
+            if (e.target.tagName === 'A') return;
+            
             if (isVisible) {
                 quoteBox.classList.remove('visible');
-                
-                // 等待动画完成后隐藏对话框，显示按钮
-                setTimeout(function() {
-                    quoteBox.style.display = 'none';
-                    btn.classList.remove('hidden');
-                    isVisible = false;
-                }, 300);
+                quoteContainer.style.opacity = '1';
+                isVisible = false;
             }
         });
     </script>

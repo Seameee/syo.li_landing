@@ -1,17 +1,18 @@
 /* CSS 变量 - 配色方案 */
 :root {
-    /* 背景色 */
-    --bg-primary: #0F0F1A;
-    --bg-secondary: #1A1A2E;
+    /* 背景色 - 浅色柔和背景 */
+    --bg-primary: #FFFDF5;
+    --bg-secondary: #FFFBF0;
     
-    /* 强调色 - 单色配色 */
+    /* 强调色 - 保留 Soyorin 主色调 */
     --accent-primary: #FFDD88;
-    --accent-dark: #BB8600;
-    --accent-light: #FFF0CC;
+    --accent-secondary: #FFBF88;
+    --accent-light: #FFFB88;
+    --accent-green: #C8FF88;
     
     /* 文字色 */
-    --text-primary: #FFFFFF;
-    --text-secondary: #888888;
+    --text-primary: #4A4A4A;
+    --text-secondary: #7A7A7A;
     
     /* 间距 */
     --spacing-sm: 1rem;
@@ -96,7 +97,7 @@ body {
 }
 
 .quote-link:visited {
-    color: var(--accent-dark);
+    color: var(--accent-secondary);
 }
 
 .quote-mark {

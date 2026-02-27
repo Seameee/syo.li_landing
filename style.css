@@ -286,6 +286,7 @@ body {
         flex-direction: column;
         min-height: auto;
         padding: var(--spacing-sm);
+        position: relative;
     }
     
     .surprise-btn {
@@ -294,27 +295,33 @@ body {
         margin-bottom: 0.5rem;
     }
     
+    .quote-container {
+        padding: var(--spacing-sm);
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
     .quote-box {
-        position: relative;
-        left: auto;
-        transform: scale(0.8);
-        flex-direction: column;
+        position: absolute;
+        left: 50%;
+        top: auto;
+        bottom: 0;
+        transform: translateX(-50%) scale(0.8);
+        flex-direction: row;
     }
     
     .quote-box.visible {
-        transform: scale(1);
-    }
-    
-    .quote-container {
-        padding: var(--spacing-sm);
+        transform: translateX(-50%) scale(1);
     }
     
     .quote-content {
-        font-size: 110%;
+        font-size: 100%;
     }
     
     .quote-bubble {
-        max-width: 280px;
+        max-width: 260px;
     }
     
     .soyorin-image {

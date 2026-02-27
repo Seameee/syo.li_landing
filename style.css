@@ -1,0 +1,160 @@
+/* CSS 变量 - 配色方案 */
+:root {
+    /* 背景色 */
+    --bg-primary: #0F0F1A;
+    --bg-secondary: #1A1A2E;
+    
+    /* 强调色 - 单色配色 */
+    --accent-primary: #FFDD88;
+    --accent-dark: #BB8600;
+    --accent-light: #FFF0CC;
+    
+    /* 文字色 */
+    --text-primary: #FFFFFF;
+    --text-secondary: #888888;
+    
+    /* 间距 */
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+}
+
+/* 重置样式 */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 基础样式 */
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.6;
+}
+
+/* 主容器 */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+    text-align: center;
+    gap: var(--spacing-lg);
+}
+
+/* 图片容器 */
+.image-container {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soyorin-image {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border: 2px solid var(--accent-primary);
+    border-radius: 4px;
+    background-color: var(--bg-secondary);
+}
+
+/* 名台词容器 */
+.quote-container {
+    padding: var(--spacing-md) var(--spacing-lg);
+    max-width: 600px;
+}
+
+.quote-link {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--accent-primary);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    transition: color 0.2s ease;
+    cursor: pointer;
+}
+
+.quote-link:hover {
+    color: var(--accent-light);
+}
+
+.quote-link:visited {
+    color: var(--accent-dark);
+}
+
+.quote-mark {
+    font-weight: 300;
+    opacity: 0.8;
+}
+
+.quote-text {
+    display: inline;
+}
+
+/* 页脚 */
+.footer {
+    padding: var(--spacing-sm);
+}
+
+.contact-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-primary);
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .quote-link {
+        font-size: 1.25rem;
+        letter-spacing: 0.05em;
+    }
+    
+    .container {
+        gap: var(--spacing-md);
+        padding: var(--spacing-sm);
+    }
+}
+
+@media (min-width: 768px) {
+    .quote-link {
+        font-size: 1.75rem;
+    }
+}
+
+/* 打印样式 */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    .quote-link {
+        color: black;
+    }
+    
+    .contact-link {
+        color: #666;
+    }
+}

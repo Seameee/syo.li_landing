@@ -1,14 +1,20 @@
-/* CSS 变量 - 配色方案 */
+/* ============================================
+   syo.li Landing Page - 样式表
+   灵感来源：BanG Dream! It's MyGO!!!!! - Soyorin
+   ============================================ */
+
+/* ============================================
+   CSS 变量定义
+   ============================================ */
 :root {
-    /* 背景色 - 浅色柔和背景 */
+    /* 背景色 */
     --bg-primary: #FFFDF5;
     --bg-secondary: #FFFBF0;
     
-    /* 强调色 - 保留 Soyorin 主色调 */
+    /* 强调色（Soyorin 主色调） */
     --accent-primary: #FFDD88;
     --accent-secondary: #FFBF88;
     --accent-light: #FFFB88;
-    --accent-green: #C8FF88;
     
     /* 文字色 */
     --text-primary: #4A4A4A;
@@ -20,14 +26,15 @@
     --spacing-lg: 3rem;
 }
 
-/* 重置样式 */
+/* ============================================
+   基础重置
+   ============================================ */
 *, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* 基础样式 */
 html {
     font-size: 16px;
 }
@@ -44,7 +51,11 @@ body {
     line-height: 1.6;
 }
 
-/* 主容器 */
+/* ============================================
+   布局容器
+   ============================================ */
+
+/* 主容器 - 垂直分布 */
 .container {
     display: flex;
     flex-direction: column;
@@ -56,7 +67,7 @@ body {
     gap: var(--spacing-md);
 }
 
-/* 主要内容区域 */
+/* 主内容区 - 居中 */
 .main-content {
     flex: 1;
     display: flex;
@@ -67,7 +78,9 @@ body {
     width: 100%;
 }
 
-/* 图片容器 */
+/* ============================================
+   图片区域
+   ============================================ */
 .image-container {
     width: 100%;
     max-width: 800px;
@@ -86,7 +99,11 @@ body {
     background-color: var(--bg-secondary);
 }
 
-/* 名台词包装器 - 横向布局 */
+/* ============================================
+   台词区域
+   ============================================ */
+
+/* 台词包装器 */
 .quote-wrapper {
     display: flex;
     align-items: center;
@@ -98,7 +115,7 @@ body {
     position: relative;
 }
 
-/* 气泡按钮 */
+/* 点击按钮 */
 .surprise-btn {
     width: 50px;
     height: 50px;
@@ -108,11 +125,11 @@ body {
     cursor: pointer;
     padding: 0;
     overflow: hidden;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     position: absolute;
     left: 0;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .surprise-btn:hover {
@@ -124,85 +141,10 @@ body {
     transform: scale(0.95);
 }
 
-
 .surprise-avatar {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* 对话框样式 */
-.quote-box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) scale(0.8);
-}
-
-.quote-box.visible {
-    opacity: 1;
-    transform: translateX(-50%) scale(1);
-    cursor: pointer;
-    pointer-events: auto;
-}
-
-.quote-avatar {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-}
-
-.quote-avatar.hidden-avatar {
-    display: none;
-}
-
-.quote-bubble {
-    display: inline-block;
-    max-width: 400px;
-    padding: 0.5em 0.8em;
-    border-radius: 0.8em;
-    border: 2px solid #AAA;
-    background: #FFFFFF;
-    color: #555;
-    text-align: left;
-    font-weight: bold;
-    position: relative;
-}
-
-.quote-name {
-    display: inline-block;
-    padding: 0.2em 0.8em;
-    border-radius: 0.8em;
-    background: #FF3B72;
-    color: #FFF;
-    font-size: 90%;
-    position: absolute;
-    top: -0.8em;
-    left: 0.5em;
-}
-
-.quote-content {
-    font-size: 140%;
-    padding: 0.5em 0.3em 0.2em;
-    color: #555;
-}
-
-.quote-content .quote-song {
-    color: var(--accent-primary);
-    text-decoration: none;
-}
-
-.quote-content .quote-song:hover {
-    text-decoration: underline;
 }
 
 /* 名台词容器 */
@@ -240,7 +182,87 @@ body {
     display: inline;
 }
 
-/* 页脚区域 */
+/* ============================================
+   对话框样式
+   ============================================ */
+.quote-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scale(0.8);
+}
+
+.quote-box.visible {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.quote-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.quote-avatar.hidden-avatar {
+    display: none;
+}
+
+/* 对话气泡 */
+.quote-bubble {
+    display: inline-block;
+    max-width: 400px;
+    padding: 0.5em 0.8em;
+    border-radius: 0.8em;
+    border: 2px solid #AAA;
+    background: #FFFFFF;
+    color: #555;
+    text-align: left;
+    font-weight: bold;
+    position: relative;
+}
+
+/* 名称标签 */
+.quote-name {
+    display: inline-block;
+    padding: 0.2em 0.8em;
+    border-radius: 0.8em;
+    background: #FF3B72;
+    color: #FFF;
+    font-size: 90%;
+    position: absolute;
+    top: -0.8em;
+    left: 0.5em;
+}
+
+/* 对话内容 */
+.quote-content {
+    font-size: 140%;
+    padding: 0.5em 0.3em 0.2em;
+    color: #555;
+}
+
+.quote-content .quote-song {
+    color: var(--accent-primary);
+    text-decoration: none;
+}
+
+.quote-content .quote-song:hover {
+    text-decoration: underline;
+}
+
+/* ============================================
+   页脚区域
+   ============================================ */
 .footer {
     display: flex;
     flex-direction: column;
@@ -270,7 +292,11 @@ body {
     height: auto;
 }
 
-/* 响应式设计 */
+/* ============================================
+   响应式设计
+   ============================================ */
+
+/* 移动端（≤600px） */
 @media (max-width: 600px) {
     .quote-link {
         font-size: 1.1rem;
@@ -286,7 +312,6 @@ body {
         flex-direction: column;
         min-height: auto;
         padding: var(--spacing-sm);
-        position: relative;
     }
     
     .surprise-btn {
@@ -306,10 +331,8 @@ body {
     .quote-box {
         position: absolute;
         left: 50%;
-        top: auto;
         bottom: 0;
         transform: translateX(-50%) scale(0.8);
-        flex-direction: row;
     }
     
     .quote-box.visible {
@@ -329,19 +352,23 @@ body {
     }
 }
 
+/* 平板（601px - 768px） */
 @media (min-width: 601px) and (max-width: 768px) {
     .quote-link {
         font-size: 1.4rem;
     }
 }
 
+/* 桌面端（≥769px） */
 @media (min-width: 769px) {
     .quote-link {
         font-size: 1.75rem;
     }
 }
 
-/* 深色模式 */
+/* ============================================
+   深色模式
+   ============================================ */
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-primary: #1A1A1A;
@@ -399,7 +426,9 @@ body {
     }
 }
 
-/* 打印样式 */
+/* ============================================
+   打印样式
+   ============================================ */
 @media print {
     body {
         background-color: white;

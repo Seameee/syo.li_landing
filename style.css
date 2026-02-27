@@ -341,6 +341,64 @@ body {
     }
 }
 
+/* 深色模式 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-primary: #1A1A1A;
+        --bg-secondary: #252525;
+        --text-primary: #E8E8E8;
+        --text-secondary: #AAAAAA;
+    }
+    
+    body {
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+    }
+    
+    .soyorin-image {
+        border-color: var(--accent-primary);
+    }
+    
+    .surprise-btn {
+        background: #2A2A2A;
+        border-color: var(--accent-primary);
+    }
+    
+    .quote-link {
+        color: var(--accent-primary);
+    }
+    
+    .quote-link:hover {
+        color: #FFE8A8;
+    }
+    
+    .quote-link:visited {
+        color: var(--accent-secondary);
+    }
+    
+    .quote-bubble {
+        background: #2A2A2A;
+        border-color: #555;
+        color: #DDD;
+    }
+    
+    .quote-content {
+        color: #DDD;
+    }
+    
+    .quote-content .quote-song {
+        color: var(--accent-primary);
+    }
+    
+    .contact-link {
+        color: var(--text-secondary);
+    }
+    
+    .contact-link:hover {
+        color: var(--accent-primary);
+    }
+}
+
 /* 打印样式 */
 @media print {
     body {

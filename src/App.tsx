@@ -63,11 +63,6 @@ function App() {
               }
             }}
           >
-            <img
-              src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png"
-              alt="Soyorin"
-              className={`quote-avatar ${isVisible ? '' : 'hidden-avatar'}`}
-            />
             <div className="quote-bubble">
               <span className="quote-name">爽世</span>
               <div className="quote-content">

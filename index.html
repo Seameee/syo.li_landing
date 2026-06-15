@@ -1,16 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <!-- SEO 基础标签 -->
     <title>syo.li - 长崎爽世 | BanG Dream! It's MyGO!!!!!</title>
-    <meta name="description" content="syo.li - 灵感源自《BanG Dream! It's MyGO!!!!!》中长崎爽世（Soyorin）的落地页。MyGO!!!!!乐队贝斯手，代表色#FFDD88。名台词：「既然这样，就由我来结束掉！」">
-    <meta name="keywords" content="长崎爽世, 长崎素世, Nagasaki Soyo, Soyorin, そよ, BanG Dream, It's MyGO, MyGO!!!!!, CRYCHIC, 贝斯手, 春日影, 既然这样就由我来结束掉, 为什么要演奏春日影">
-    <meta name="author" content="syo.li">
-    <meta name="robots" content="index, follow">
-    
+    <meta name="description" content="syo.li - 灵感源自《BanG Dream! It's MyGO!!!!!》中长崎爽世（Soyorin）的落地页。MyGO!!!!!乐队贝斯手，代表色#FFDD88。名台词：「既然这样，就由我来结束掉！" />
+    <meta name="keywords" content="长崎爽世, 长崎素世, Nagasaki Soyo, Soyorin, そよ, BanG Dream, It's MyGO, MyGO!!!!!, CRYCHIC, 贝斯手, 春日影, 既然这样就由我来结束掉, 为什么要演奏春日影" />
+    <meta name="author" content="syo.li" />
+    <meta name="robots" content="index, follow" />
+
     <!-- Open Graph 社交分享 -->
     <meta property="og:title" content="syo.li - 长崎爽世 | BanG Dream! It's MyGO!!!!!">
     <meta property="og:description" content="灵感源自《BanG Dream! It's MyGO!!!!!》中长崎爽世（Soyorin）的落地页。MyGO!!!!!乐队贝斯手。">
@@ -18,113 +18,17 @@
     <meta property="og:url" content="https://syo.li/">
     <meta property="og:site_name" content="syo.li">
     <meta property="og:locale" content="zh_CN">
-    
+
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="syo.li - 长崎爽世">
     <meta name="twitter:description" content="灵感源自《BanG Dream! It's MyGO!!!!!》中长崎爽世的落地页">
-    
+
     <!-- 规范链接 -->
     <link rel="canonical" href="https://syo.li/">
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <main class="container">
-        <!-- 主内容区：图片 + 台词 -->
-        <section class="main-content">
-            <!-- Soyorin 展示图 -->
-            <div class="image-container">
-                <img src="https://storage.moegirl.org.cn/moegirl/commons/c/c2/BanG_Dream%21_It%27s_MyGO%21%21%21%21%21_10163704.jpg" 
-                     alt="Soyorin" 
-                     class="soyorin-image">
-            </div>
-            
-            <!-- 台词区：按钮 + 名台词 + 对话框 -->
-            <div class="quote-wrapper">
-                <!-- 点击触发按钮 -->
-                <button class="surprise-btn" id="surpriseBtn" aria-label="点击查看更多">
-                    <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
-                         alt="Soyorin" 
-                         class="surprise-avatar">
-                </button>
-                
-                <!-- 名台词 -->
-                <div class="quote-container" id="quoteContainer">
-                    <a href="https://mzh.moegirl.org.cn/%E9%95%BF%E5%B4%8E%E7%88%BD%E4%B8%96" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="quote-link"
-                       title="点击访问萌娘百科 - 长崎素世">
-                        <span class="quote-mark">「</span>
-                        <span class="quote-text">既然这样，就由我来结束掉！</span>
-                        <span class="quote-mark">」</span>
-                    </a>
-                </div>
-                
-                <!-- 展开的对话框 -->
-                <div class="quote-box" id="quoteBox">
-                    <img src="https://storage.moegirl.org.cn/moegirl/commons/3/30/Nagasaki_Soyo_icon.png" 
-                         alt="Soyorin" 
-                         class="quote-avatar hidden-avatar">
-                    <div class="quote-bubble">
-                        <span class="quote-name">爽世</span>
-                        <div class="quote-content">
-                            为什么要演奏《<a href="https://mzh.moegirl.org.cn/%E6%98%A5%E6%97%A5%E5%BD%B1" 
-                               target="_blank" 
-                               rel="noopener noreferrer"
-                               class="quote-song">春日影</a>》？！！
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- 页脚：联系方式 + 计数器 -->
-        <footer class="footer">
-            <a href="https://t.me/Ayanottbot" 
-               target="_blank" 
-               rel="noopener noreferrer" 
-               class="contact-link">
-                Telegram: @Ayanottbot
-            </a>
-            <div class="counter">
-                <img src="https://count.getloli.com/@syo.li.count?name=syo.li.count&theme=booru-lewd&padding=7&offset=0&align=center&scale=1&pixelated=1&darkmode=auto" 
-                     alt="Moe Counter" 
-                     class="counter-img">
-            </div>
-        </footer>
-    </main>
-    
-    <script>
-        // 获取 DOM 元素
-        const btn = document.getElementById('surpriseBtn');
-        const quoteBox = document.getElementById('quoteBox');
-        const quoteContainer = document.getElementById('quoteContainer');
-        
-        // 状态标记
-        let isVisible = false;
-        
-        // 切换显示状态
-        function toggleQuote() {
-            if (isVisible) {
-                quoteBox.classList.remove('visible');
-                quoteContainer.style.opacity = '1';
-            } else {
-                quoteContainer.style.opacity = '0';
-                quoteBox.classList.add('visible');
-            }
-            isVisible = !isVisible;
-        }
-        
-        // 按钮点击事件
-        btn.addEventListener('click', toggleQuote);
-        
-        // 对话框点击事件（点击链接除外）
-        quoteBox.addEventListener('click', function(e) {
-            if (e.target.tagName !== 'A') {
-                toggleQuote();
-            }
-        });
-    </script>
-</body>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
